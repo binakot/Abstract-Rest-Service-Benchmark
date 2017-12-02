@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication.Controllers
+namespace dotNetCoreRestService.Controllers
 {
     [Route("api/[controller]")]
     public class TestController : Controller
@@ -10,7 +10,7 @@ namespace WebApplication.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new[] { "test" };
+            return new[] { "Hello, World!"};
         }
     }
 }
