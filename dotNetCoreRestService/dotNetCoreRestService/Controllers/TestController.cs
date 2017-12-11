@@ -10,7 +10,7 @@ namespace dotNetCoreRestService.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new[] { "Hello, World!"};
+            return new[] { "Hello, World!" };
         }
     }
 }
