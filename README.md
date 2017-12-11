@@ -5,7 +5,7 @@
 The simple test with [AB](https://httpd.apache.org/docs/2.4/programs/ab.html):
 
 ```bash
-$ ab -n 100000 -c 10 -k -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT/api/test
+$ ab -n 100000 -c 100 -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT/api/test
 ```
 
 ---
@@ -37,35 +37,34 @@ Server Port:            5000
 Document Path:          /api/test
 Document Length:        17 bytes
 
-Concurrency Level:      10
-Time taken for tests:   174.973 seconds
+Concurrency Level:      100
+Time taken for tests:   52.670 seconds
 Complete requests:      100000
 Failed requests:        0
-Keep-Alive requests:    0
 Total transferred:      15600000 bytes
 HTML transferred:       1700000 bytes
-Requests per second:    571.52 [#/sec] (mean)
-Time per request:       17.497 [ms] (mean)
-Time per request:       1.750 [ms] (mean, across all concurrent requests)
-Transfer rate:          87.07 [Kbytes/sec] received
+Requests per second:    1898.61 [#/sec] (mean)
+Time per request:       52.670 [ms] (mean)
+Time per request:       0.527 [ms] (mean, across all concurrent requests)
+Transfer rate:          289.24 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0       5
-Processing:     1   17   3.2     16      55
-Waiting:        1   14   2.9     14      41
-Total:          1   17   3.2     16      55
+Connect:        0    0   0.3      0       7
+Processing:     1   53  78.6     31    1719
+Waiting:        1   40  62.0     25    1433
+Total:          1   53  78.6     31    1719
 
 Percentage of the requests served within a certain time (ms)
-  50%     16
-  66%     18
-  75%     20
-  80%     21
-  90%     22
-  95%     23
-  98%     24
-  99%     26
- 100%     55 (longest request)
+  50%     31
+  66%     40
+  75%     49
+  80%     60
+  90%     95
+  95%    167
+  98%    306
+  99%    427
+100% 1719 (longest request)
 ```
 
 ### Spring Boot Rest Service
@@ -93,35 +92,34 @@ Server Port:            8080
 Document Path:          /api/test
 Document Length:        13 bytes
 
-Concurrency Level:      10
-Time taken for tests:   17.687 seconds
+Concurrency Level:      100
+Time taken for tests:   36.404 seconds
 Complete requests:      100000
 Failed requests:        0
-Keep-Alive requests:    99004
-Total transferred:      15095020 bytes
+Total transferred:      14600000 bytes
 HTML transferred:       1300000 bytes
-Requests per second:    5653.82 [#/sec] (mean)
-Time per request:       1.769 [ms] (mean)
-Time per request:       0.177 [ms] (mean, across all concurrent requests)
-Transfer rate:          833.44 [Kbytes/sec] received
+Requests per second:    2746.97 [#/sec] (mean)
+Time per request:       36.404 [ms] (mean)
+Time per request:       0.364 [ms] (mean, across all concurrent requests)
+Transfer rate:          391.66 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       1
-Processing:     0    2   6.2      1     320
-Waiting:        0    2   6.2      1     320
-Total:          0    2   6.2      1     320
+Connect:        0    0   0.3      0      15
+Processing:     0   36 102.1      4    2560
+Waiting:        0   25  79.7      3    2112
+Total:          0   36 102.1      4    2560
 
 Percentage of the requests served within a certain time (ms)
-  50%      1
-  66%      1
-  75%      1
-  80%      1
-  90%      3
-  95%      6
-  98%     11
-  99%     17
- 100%    320 (longest request)
+  50%      4
+  66%     10
+  75%     21
+  80%     37
+  90%     84
+  95%    179
+  98%    376
+  99%    537
+100% 2560 (longest request)
 ```
 
 ### Go Rest Service
