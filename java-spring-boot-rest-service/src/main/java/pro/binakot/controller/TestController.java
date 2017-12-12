@@ -11,6 +11,6 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String test() {
-        return "Hello, World!";
+        return "[\"Hello, World!\"]";
     }
 }
