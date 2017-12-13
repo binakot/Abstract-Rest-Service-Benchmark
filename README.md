@@ -124,7 +124,58 @@ Percentage of the requests served within a certain time (ms)
 
 ### Go Rest Service
 
-> TODO
+Language: Go
+
+Framework: Go SDK 1.9.2
+
+Main tutorial: https://www.codementor.io/codehakase/building-a-restful-api-with-golang-a6yivzqdo
+
+Run:
+
+```bash
+$ go build
+$ go-rest-service
+```
+
+Result:
+
+```
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api/test
+Document Length:        16 bytes
+
+Concurrency Level:      100
+Time taken for tests:   24.143 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      12400000 bytes
+HTML transferred:       1600000 bytes
+Requests per second:    4141.95 [#/sec] (mean)
+Time per request:       24.143 [ms] (mean)
+Time per request:       0.241 [ms] (mean, across all concurrent requests)
+Transfer rate:          501.56 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0      10
+Processing:     0   24   1.1     24      36
+Waiting:        0   24   1.1     24      36
+Total:          0   24   1.1     24      36
+
+Percentage of the requests served within a certain time (ms)
+  50%     24
+  66%     24
+  75%     24
+  80%     24
+  90%     25
+  95%     25
+  98%     25
+  99%     26
+ 100%     36 (longest request)
+```
 
 ### NodeJS Rest Service
 
