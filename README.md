@@ -10,6 +10,16 @@ $ ab -n 100000 -c 100 -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT
 
 ---
 
+## Results
+
+|   | Service | Language | Framework | RPS |
+| - | ------- | -------- | --------- | --- |
+| 1 | [Go Rest Service](/go-rest-service/) | Go | Go SDK 1.9.2 | 4141.95 |
+| 2 | [Spring Boot Rest Service](/java-spring-boot-rest-service/) | Java | Oracle JDK8 | 2909.35 |
+| 3 | [.Net Core Rest Service](/dotNetCoreRestService/) | C# | .NET Core (ASP.NET Core 2.0) | 1871.11 |
+
+---
+
 ## Services
 
 ### .Net Core Rest Service
