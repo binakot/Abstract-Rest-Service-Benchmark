@@ -14,9 +14,9 @@ $ ab -n 100000 -c 100 -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [Go Rest Service](/go-rest-service/) | Go | Go SDK 1.9.2 | 4141.95 |
-| 2 | [Spring Boot Rest Service](/java-spring-boot-rest-service/) | Java | Oracle JDK8 | 2909.35 |
-| 3 | [.Net Core Rest Service](/dotNetCoreRestService/) | C# | .NET Core (ASP.NET Core 2.0) | 1871.11 |
+| 1 | [Go Rest Service](/go-rest-service/) | Go | Go SDK 1.9.2 | 4103.44 |
+| 2 | [Spring Boot Rest Service](/java-spring-boot-rest-service/) | Java | Oracle JDK8 | 2837.87 |
+| 3 | [.Net Core Rest Service](/dotNetCoreRestService/) | C# | .NET Core (ASP.NET Core 2.0) | 1942.79 |
 
 ---
 
@@ -45,36 +45,36 @@ Server Hostname:        localhost
 Server Port:            5000
 
 Document Path:          /api/test
-Document Length:        17 bytes
+Document Length:        13 bytes
 
 Concurrency Level:      100
-Time taken for tests:   53.444 seconds
+Time taken for tests:   51.472 seconds
 Complete requests:      100000
 Failed requests:        0
-Total transferred:      15600000 bytes
-HTML transferred:       1700000 bytes
-Requests per second:    1871.11 [#/sec] (mean)
-Time per request:       53.444 [ms] (mean)
-Time per request:       0.534 [ms] (mean, across all concurrent requests)
-Transfer rate:          285.05 [Kbytes/sec] received
+Total transferred:      14600000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    1942.79 [#/sec] (mean)
+Time per request:       51.472 [ms] (mean)
+Time per request:       0.515 [ms] (mean, across all concurrent requests)
+Transfer rate:          277.00 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.2      0      11
-Processing:     1   53  83.7     31    1845
-Waiting:        1   41  66.5     25    1789
-Total:          2   53  83.7     31    1845
+Connect:        0    0   0.3      0       8
+Processing:     1   51  79.4     28    1605
+Waiting:        0   40  64.3     23    1578
+Total:          1   51  79.4     28    1605
 
 Percentage of the requests served within a certain time (ms)
-  50%     31
-  66%     39
-  75%     47
-  80%     58
-  90%    100
-  95%    178
-  98%    326
-  99%    454
- 100%   1845 (longest request)
+  50%     28
+  66%     38
+  75%     52
+  80%     71
+  90%     97
+  95%    158
+  98%    311
+  99%    422
+ 100%   1605 (longest request)
 ```
 
 ### Spring Boot Rest Service
@@ -100,36 +100,36 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /api/test
-Document Length:        17 bytes
+Document Length:        13 bytes
 
 Concurrency Level:      100
-Time taken for tests:   34.372 seconds
+Time taken for tests:   35.238 seconds
 Complete requests:      100000
 Failed requests:        0
-Total transferred:      15600000 bytes
-HTML transferred:       1700000 bytes
-Requests per second:    2909.35 [#/sec] (mean)
-Time per request:       34.372 [ms] (mean)
-Time per request:       0.344 [ms] (mean, across all concurrent requests)
-Transfer rate:          443.22 [Kbytes/sec] received
+Total transferred:      14600000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    2837.87 [#/sec] (mean)
+Time per request:       35.238 [ms] (mean)
+Time per request:       0.352 [ms] (mean, across all concurrent requests)
+Transfer rate:          404.62 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.2      0       7
-Processing:     0   34  85.1      4    1576
-Waiting:        0   24  67.2      3    1320
-Total:          1   34  85.1      4    1576
+Connect:        0    0   0.3      0      17
+Processing:     0   35  86.1      5    1834
+Waiting:        0   25  68.7      3    1688
+Total:          0   35  86.1      5    1834
 
 Percentage of the requests served within a certain time (ms)
-  50%      4
-  66%     12
-  75%     27
-  80%     42
-  90%     85
-  95%    175
-  98%    325
-  99%    449
- 100%   1576 (longest request)
+  50%      5
+  66%     16
+  75%     37
+  80%     48
+  90%     78
+  95%    159
+  98%    319
+  99%    445
+ 100%   1834 (longest request)
 ```
 
 ### Go Rest Service
@@ -155,36 +155,36 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /api/test
-Document Length:        16 bytes
+Document Length:        13 bytes
 
 Concurrency Level:      100
-Time taken for tests:   24.143 seconds
+Time taken for tests:   24.370 seconds
 Complete requests:      100000
 Failed requests:        0
-Total transferred:      12400000 bytes
-HTML transferred:       1600000 bytes
-Requests per second:    4141.95 [#/sec] (mean)
-Time per request:       24.143 [ms] (mean)
-Time per request:       0.241 [ms] (mean, across all concurrent requests)
-Transfer rate:          501.56 [Kbytes/sec] received
+Total transferred:      11500000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    4103.44 [#/sec] (mean)
+Time per request:       24.370 [ms] (mean)
+Time per request:       0.244 [ms] (mean, across all concurrent requests)
+Transfer rate:          460.84 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0      10
-Processing:     0   24   1.1     24      36
-Waiting:        0   24   1.1     24      36
-Total:          0   24   1.1     24      36
+Connect:        0    0   0.3      0       8
+Processing:     0   24   1.8     24      37
+Waiting:        0   24   1.8     24      36
+Total:          0   24   1.8     24      37
 
 Percentage of the requests served within a certain time (ms)
   50%     24
   66%     24
   75%     24
-  80%     24
-  90%     25
-  95%     25
-  98%     25
-  99%     26
- 100%     36 (longest request)
+  80%     25
+  90%     26
+  95%     28
+  98%     30
+  99%     31
+ 100%     37 (longest request)
 ```
 
 ### NodeJS Rest Service
