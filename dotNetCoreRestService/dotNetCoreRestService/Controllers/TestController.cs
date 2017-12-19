@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotNetCoreRestService.Controllers
@@ -6,11 +5,10 @@ namespace dotNetCoreRestService.Controllers
     [Route("api/[controller]")]
     public class TestController : Controller
     {
-        // GET api/test
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new[] { "Hello, World!" };
+            return "Hello, World!";
         }
     }
 }
