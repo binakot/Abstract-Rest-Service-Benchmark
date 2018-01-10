@@ -189,7 +189,21 @@ Percentage of the requests served within a certain time (ms)
 
 ### NodeJS Rest Service
 
-> TODO
+Language: JavaScript  
+
+Framework: Node.js 9.2.0  
+
+Run:  
+
+```bash
+$ node ./index.js
+```  
+
+Result:  
+
+```
+Waiting for result
+```
 
 ---
 
