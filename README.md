@@ -187,7 +187,7 @@ Percentage of the requests served within a certain time (ms)
  100%     37 (longest request)
 ```
 
-### NodeJS Rest Service
+### NodeJS Rest Service Raw
 
 Language: JavaScript  
 
@@ -197,6 +197,25 @@ Run:
 
 ```bash
 $ node ./index.js
+```  
+
+Result:  
+
+```
+Waiting for result
+```
+
+### NodeJS Rest Service Express
+
+Language: JavaScript  
+
+Framework: Node.js 9.2.0 + Express 4.16.2
+
+Run:  
+
+```bash
+$ npm i  
+$ node ./index.js  
 ```  
 
 Result:  
