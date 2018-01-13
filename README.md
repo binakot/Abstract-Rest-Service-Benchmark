@@ -77,6 +77,8 @@ Percentage of the requests served within a certain time (ms)
  100%   1605 (longest request)
 ```
 
+---
+
 ### Spring Boot Rest Service
 
 Language: Java
@@ -131,6 +133,8 @@ Percentage of the requests served within a certain time (ms)
   99%    445
  100%   1834 (longest request)
 ```
+
+---
 
 ### Go Rest Service
 
@@ -187,7 +191,9 @@ Percentage of the requests served within a certain time (ms)
  100%     37 (longest request)
 ```
 
-### NodeJS Rest Service Raw
+---
+
+### NodeJS Native Rest Service
 
 Language: JavaScript  
 
@@ -204,10 +210,12 @@ $ node ./index.js
 Result:  
 
 ```
-Waiting for result
+TODO benchmark
 ```
 
-### NodeJS Rest Service Express
+---
+
+### NodeJS Express Rest Service
 
 Language: JavaScript  
 
@@ -225,7 +233,7 @@ $ node ./index.js
 Result:  
 
 ```
-Waiting for result
+TODO benchmark
 ```
 
 ---
