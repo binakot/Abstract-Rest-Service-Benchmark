@@ -187,9 +187,46 @@ Percentage of the requests served within a certain time (ms)
  100%     37 (longest request)
 ```
 
-### NodeJS Rest Service
+### NodeJS Rest Service Raw
 
-> TODO
+Language: JavaScript  
+
+Framework: Node.js 9.2.0  
+
+Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
+
+Run:  
+
+```bash
+$ node ./index.js
+```  
+
+Result:  
+
+```
+Waiting for result
+```
+
+### NodeJS Rest Service Express
+
+Language: JavaScript  
+
+Framework: Node.js 9.2.0 + Express 4.16.2
+
+Main tutorial: http://expressjs.com/en/starter/hello-world.html  
+
+Run:  
+
+```bash
+$ npm i  
+$ node ./index.js  
+```  
+
+Result:  
+
+```
+Waiting for result
+```
 
 ---
 
