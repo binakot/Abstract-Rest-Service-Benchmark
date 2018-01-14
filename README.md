@@ -317,3 +317,24 @@ CPU: 3.4GHz quad-core Intel Core i5 (Turbo Boost up to 3.8GHz)
 RAM: 8GB (two 4GB) of 2400MHz DDR4 memory
 
 HDD: 1TB Fusion Drive
+
+
+---
+
+### Rust Rest Service
+
+Language: RUST
+
+Framework: iron 0.6.0
+
+Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
+
+Run:  
+
+```
+docker build -t rustest .
+docker run -p 8080:8080 -it rustest:latest
+``` 
+
+Result: 
+TODO :-)
