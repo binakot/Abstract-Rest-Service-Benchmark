@@ -14,9 +14,11 @@ $ ab -n 100000 -c 100 -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [Go Rest Service](/go-rest-service/) | Go | Go SDK 1.9.2 | 4103.44 |
-| 2 | [Spring Boot Rest Service](/java-spring-boot-rest-service/) | Java | Oracle JDK8 | 2837.87 |
-| 3 | [.Net Core Rest Service](/dotNetCoreRestService/) | C# | .NET Core (ASP.NET Core 2.0) | 1942.79 |
+| 1 | [Go Rest Service (gorilla/mux)](/go-rest-service/) | Go | Go SDK 1.9.2 | 4103.44 |
+| 2 | [Java Rest Service (Spring Boot)](/java-spring-boot-rest-service/) | Java | Oracle JDK8 | 2837.87 |
+| 3 | [NodeJS Rest Service (Express)](/node.js-express/) | JS | NodeJS 8.9.4 LTS + Express 4.16.2 | 2801.68 |
+| 4 | [.Net Core Rest Service (Native)](/dotNetCoreRestService/) | C# | .NET Core (ASP.NET Core 2.0) | 1942.79 |
+| 5 | [NodeJS Rest Service (Native)](/node.js/) | JS | NodeJS 8.9.4 LTS | 1774.19 |
 
 ---
 
@@ -197,7 +199,7 @@ Percentage of the requests served within a certain time (ms)
 
 Language: JavaScript  
 
-Framework: Node.js 9.2.0  
+Framework: Node.js 8.9.4 LTS  
 
 Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
 
@@ -210,7 +212,41 @@ $ node ./index.js
 Result:  
 
 ```
-TODO benchmark
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api/test
+Document Length:        13 bytes
+
+Concurrency Level:      100
+Time taken for tests:   56.364 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      11400000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    1774.19 [#/sec] (mean)
+Time per request:       56.364 [ms] (mean)
+Time per request:       0.564 [ms] (mean, across all concurrent requests)
+Transfer rate:          197.52 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0      11
+Processing:     1   56  92.1     17    1201
+Waiting:        0   33  69.8      4    1187
+Total:          1   56  92.1     17    1201
+
+Percentage of the requests served within a certain time (ms)
+  50%     17
+  66%     41
+  75%     66
+  80%     90
+  90%    168
+  95%    244
+  98%    350
+  99%    429
+ 100%   1201 (longest request)
 ```
 
 ---
@@ -219,7 +255,7 @@ TODO benchmark
 
 Language: JavaScript  
 
-Framework: Node.js 9.2.0 + Express 4.16.2
+Framework: Node.js 8.9.4 LTS + Express 4.16.2
 
 Main tutorial: http://expressjs.com/en/starter/hello-world.html  
 
@@ -233,7 +269,41 @@ $ node ./index.js
 Result:  
 
 ```
-TODO benchmark
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api/test
+Document Length:        13 bytes
+
+Concurrency Level:      100
+Time taken for tests:   35.693 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      21300000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    2801.68 [#/sec] (mean)
+Time per request:       35.693 [ms] (mean)
+Time per request:       0.357 [ms] (mean, across all concurrent requests)
+Transfer rate:          582.77 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       9
+Processing:    13   36   3.4     35     101
+Waiting:       11   35   3.6     35      95
+Total:         13   36   3.4     35     101
+
+Percentage of the requests served within a certain time (ms)
+  50%     35
+  66%     36
+  75%     36
+  80%     36
+  90%     37
+  95%     39
+  98%     44
+  99%     48
+ 100%    101 (longest request)
 ```
 
 ---
