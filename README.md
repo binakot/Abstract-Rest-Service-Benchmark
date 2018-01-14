@@ -308,6 +308,63 @@ Percentage of the requests served within a certain time (ms)
 
 ---
 
+### Flask 
+
+Language: Python 3.5  
+
+Framework: Flask 0.12.2
+
+Main tutorial: http://flask.pocoo.org/  
+
+Run:  
+
+```bash
+$ pip install -r requirements.txt
+$ FLASK_APP=app.py flask run
+```  
+
+Result:  
+
+```
+Server Software:        Werkzeug/0.14.1
+Server Hostname:        localhost
+Server Port:            5000
+
+Document Path:          /api/test/
+Document Length:        12 bytes
+
+Concurrency Level:      100
+Time taken for tests:   48.777 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      16600000 bytes
+HTML transferred:       1200000 bytes
+Requests per second:    2050.13 [#/sec] (mean)
+Time per request:       48.777 [ms] (mean)
+Time per request:       0.488 [ms] (mean, across all concurrent requests)
+Transfer rate:          332.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       4
+Processing:     1   49   3.4     48      75
+Waiting:        1   49   3.4     48      75
+Total:          5   49   3.4     48      75
+
+Percentage of the requests served within a certain time (ms)
+  50%     48
+  66%     48
+  75%     49
+  80%     49
+  90%     51
+  95%     55
+  98%     62
+  99%     65
+ 100%     75 (longest request)
+```
+
+---
+
 ## Hardware
 
 Model: [iMac 18.3](https://support.apple.com/kb/SP760)
