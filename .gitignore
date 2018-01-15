@@ -1,3 +1,6 @@
 .DS_Store
 .vscode
 rust-web-service/hello/target
+haskell-web-service/test/.stack-work/
+haskell-web-service/test/test.cabal
+haskell-web-service/test/*~

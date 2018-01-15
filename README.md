@@ -386,3 +386,27 @@ CPU: 3.4GHz quad-core Intel Core i5 (Turbo Boost up to 3.8GHz)
 RAM: 8GB (two 4GB) of 2400MHz DDR4 memory
 
 HDD: 1TB Fusion Drive
+
+---
+
+### Haskell Rest Service
+
+Language: Haskell
+
+Framework: warp 3.2.13
+
+Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
+
+Requirements:
+
+Install Haskell stack: https://docs.haskellstack.org/en/stable/README/
+Install Cabal package: `cabal install Cabal-2.0.1.1`
+
+Run:
+
+```
+stack image container
+``` 
+
+Result: 
+TODO :-)
