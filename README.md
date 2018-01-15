@@ -230,7 +230,7 @@ TODO
 
 ---
 
-### Haskell Rest Service
+### Haskell Warp Rest Service
 
 Language: Haskell
 
@@ -254,6 +254,8 @@ Result:
 ```
 TODO
 ```
+
+> TODO Change to native run (not in Docker)
 
 ---
 
