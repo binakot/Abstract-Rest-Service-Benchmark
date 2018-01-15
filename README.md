@@ -308,7 +308,30 @@ Percentage of the requests served within a certain time (ms)
 
 ---
 
-### Aiohttp
+### Python Sanic Rest Service
+
+Language: Python 3.5  
+
+Framework: Sanic 0.7.0, uvloop 0.9.1
+
+Main tutorial: http://sanic.readthedocs.io/en/latest/  
+
+Run:  
+
+```bash
+$ pip install -r requirements.txt
+$ python app.py
+```  
+
+Result:  
+
+```
+TODO
+```
+
+---
+
+### Python Aiohttp Rest Service
 
 Language: Python 3.5  
 
@@ -326,41 +349,30 @@ $ python app.py
 Result:  
 
 ```
-Server Software:        Python/3.5
-Server Hostname:        localhost
-Server Port:            8080
+TODO
+```
 
-Document Path:          /api/test
-Document Length:        13 bytes
+---
 
-Concurrency Level:      100
-Time taken for tests:   23.937 seconds
-Complete requests:      100000
-Failed requests:        0
-Total transferred:      16400000 bytes
-HTML transferred:       1300000 bytes
-Requests per second:    4177.66 [#/sec] (mean)
-Time per request:       23.937 [ms] (mean)
-Time per request:       0.239 [ms] (mean, across all concurrent requests)
-Transfer rate:          669.08 [Kbytes/sec] received
+### Rust Iron Rest Service
 
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    1   0.7      1       5
-Processing:     3   23   1.9     23      40
-Waiting:        3   19   1.6     19      35
-Total:          6   24   1.9     24      41
+Language: RUST
 
-Percentage of the requests served within a certain time (ms)
-  50%     24
-  66%     24
-  75%     24
-  80%     25
-  90%     25
-  95%     26
-  98%     32
-  99%     33
- 100%     41 (longest request)
+Framework: iron 0.6.0
+
+Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
+
+Run:  
+
+```
+docker build -t rustest .
+docker run -p 8080:8080 -it rustest:latest
+``` 
+
+Result: 
+
+```
+TODO
 ```
 
 ---
