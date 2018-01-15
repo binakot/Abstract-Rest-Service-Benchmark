@@ -308,6 +308,63 @@ Percentage of the requests served within a certain time (ms)
 
 ---
 
+### Sanic
+
+Language: Python 3.5  
+
+Framework: Sanic 0.7.0, uvloop 0.9.1
+
+Main tutorial: http://sanic.readthedocs.io/en/latest/  
+
+Run:  
+
+```bash
+$ pip install -r requirements.txt
+$ python app.py
+```  
+
+Result:  
+
+```
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8000
+
+Document Path:          /api/test
+Document Length:        13 bytes
+
+Concurrency Level:      100
+Time taken for tests:   17.949 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      11200000 bytes
+HTML transferred:       1300000 bytes
+Requests per second:    5571.42 [#/sec] (mean)
+Time per request:       17.949 [ms] (mean)
+Time per request:       0.179 [ms] (mean, across all concurrent requests)
+Transfer rate:          609.37 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.6      1       6
+Processing:     2   17   5.6     16     137
+Waiting:        2   14   5.1     13     133
+Total:          9   18   5.6     17     137
+
+Percentage of the requests served within a certain time (ms)
+  50%     17
+  66%     18
+  75%     19
+  80%     19
+  90%     20
+  95%     23
+  98%     36
+  99%     40
+ 100%    137 (longest request)
+```
+
+---
+
 ## Hardware
 
 Model: [iMac 18.3](https://support.apple.com/kb/SP760)
