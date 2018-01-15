@@ -205,7 +205,6 @@ TODO
 
 ---
 
-
 ### Rust Iron Rest Service
 
 Language: RUST
@@ -217,8 +216,8 @@ Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
 Run:  
 
 ```bash
-docker build -t rustest .
-docker run -p 8080:8080 -it rustest:latest
+$ docker build -t rustest .
+$ docker run -p 8080:8080 -it rustest:latest
 ``` 
 
 Result: 
@@ -228,6 +227,33 @@ TODO
 ```
 
 > TODO Change to native run (not in Docker)
+
+---
+
+### Haskell Rest Service
+
+Language: Haskell
+
+Framework: warp 3.2.13
+
+Main tutorial: http://taylor.fausak.me/2014/10/21/building-a-json-rest-api-in-haskell/
+
+Requirements:
+
+* Install Haskell stack: https://docs.haskellstack.org/en/stable/README/
+* Install Cabal package: `cabal install Cabal-2.0.1.1`
+
+Run:
+
+```bash
+$ stack image container
+``` 
+
+Result: 
+
+```
+TODO
+```
 
 ---
 
