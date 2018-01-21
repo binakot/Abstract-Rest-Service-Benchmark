@@ -68,6 +68,30 @@ TODO
 
 ---
 
+### Java Light 4J Rest Service
+
+Language: Java
+
+Framework: Oracle JDK8
+
+Main tutorial: https://github.com/networknt/light-example-4j/tree/master/demo
+
+Run:
+
+```bash
+$ mvn clean install
+$ cd target
+$ java -jar service-example-0.1.0.jar
+```
+
+Result:
+
+```
+TODO
+```
+
+---
+
 ### Go Gorilla/Mux Rest Service
 
 Language: Go
