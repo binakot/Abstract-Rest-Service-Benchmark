@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 public class TextHandler implements HttpHandler {
 
     private static final ByteBuffer buffer;
-    private static final String MESSAGE = "Hello World!";
+    private static final String MESSAGE = "Hello, World!";
 
     static {
         buffer = ByteBuffer.allocateDirect(MESSAGE.length());
@@ -23,8 +23,7 @@ public class TextHandler implements HttpHandler {
     }
 
     public void handleRequest(HttpServerExchange exchange) throws Exception {
-        exchange.getResponseHeaders().put(
-                Headers.CONTENT_TYPE, "text/plain");
+        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
         exchange.getResponseSender().send(buffer.duplicate());
     }
 }

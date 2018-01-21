@@ -1,11 +1,19 @@
 # Abstract Rest Service Benchmark
 
+## Requiremnts
+
+* PORT: `8080`
+
+* API request: `/api/test`
+
+* API response: `Hello, World!` *(text/plain, UTF-8, 13 bytes)*
+
 ## Benchmark
 
 The simple test with [AB](https://httpd.apache.org/docs/2.4/programs/ab.html):
 
 ```bash
-$ ab -n 100000 -c 100 -H "Accept-Encoding: gzip, deflate" http://localhost:$PORT/api/test
+$ ab -n 100000 -c 100 http://localhost:8080/api/test
 ```
 
 > TODO Change to [WRK](https://github.com/wg/wrk)
@@ -34,60 +42,7 @@ Run:
 
 ```bash
 $ dotnet publish -c release -o published
-$ dotnet dotNetCoreRestService.dll
-```
-
-Result:
-
-```
-TODO
-```
-
----
-
-### Java Spring Boot Rest Service
-
-Language: Java
-
-Framework: Oracle JDK8
-
-Main tutorial: http://spring.io/guides/gs/rest-service
-
-Run:
-
-```bash
-$ gradlew clean build
-$ gradlew bootRun
-```
-
-Result:
-
-```
-TODO
-```
-
----
-
-### Java Light 4J Rest Service
-
-Language: Java
-
-Framework: Oracle JDK8
-
-Main tutorial: https://github.com/networknt/light-example-4j/tree/master/demo
-
-Run:
-
-```bash
-$ mvn clean install
-$ cd target
-$ java -jar service-example-0.1.0.jar
-```
-
-Result:
-
-```
-TODO
+$ dotnet published/dotNetCoreRestService.dll
 ```
 
 ---
@@ -106,151 +61,6 @@ Run:
 $ go build
 $ go-rest-service
 ```
-
-Result:
-
-```
-TODO
-```
-
----
-
-### NodeJS Native Rest Service
-
-Language: JavaScript  
-
-Framework: Node.js 8.9.4 LTS  
-
-Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
-
-Run:  
-
-```bash
-$ node ./index.js
-```  
-
-Result:  
-
-```
-TODO
-```
-
----
-
-### NodeJS Express Rest Service
-
-Language: JavaScript  
-
-Framework: Node.js 8.9.4 LTS + Express 4.16.2
-
-Main tutorial: http://expressjs.com/en/starter/hello-world.html  
-
-Run:  
-
-```bash
-$ npm i  
-$ node ./index.js  
-```  
-
-Result:  
-
-```
-TODO
-```
-
----
-
-### Python Aiohttp Rest Service
-
-Language: Python 3.5  
-
-Framework: aiohttp 2.3.7, uvloop 0.9.1
-
-Main tutorial: https://aiohttp.readthedocs.io/en/stable/  
-
-Run:  
-
-```bash
-$ pip install -r requirements.txt
-$ python app.py
-```  
-
-Result:  
-
-```
-TODO
-```
-
----
-
-### Python Flask Rest Service
-
-Language: Python 3.5
-
-Framework: Flask 0.12.2
-
-Main tutorial: http://flask.pocoo.org/
-
-Run:
-
-```bash
-$ pip install -r requirements.txt
-$ FLASK_APP=app.py flask run
-```
-
-Result:
-
-```
-TODO
-```
-
----
-
-### Python Sanic Rest Service
-
-Language: Python 3.5  
-
-Framework: Sanic 0.7.0, uvloop 0.9.1
-
-Main tutorial: http://sanic.readthedocs.io/en/latest/  
-
-Run:  
-
-```bash
-$ pip install -r requirements.txt
-$ python app.py
-```  
-
-Result:  
-
-```
-TODO
-```
-
----
-
-### Rust Iron Rest Service
-
-Language: RUST
-
-Framework: iron 0.6.0
-
-Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
-
-Run:  
-
-```bash
-$ docker build -t rustest .
-$ docker run -p 8080:8080 -it rustest:latest
-``` 
-
-Result: 
-
-```
-TODO
-```
-
-> TODO Change to native run (not in Docker)
 
 ---
 
@@ -271,17 +81,150 @@ Run:
 
 ```bash
 $ stack image container
-``` 
-
-Result: 
-
-```
-TODO
 ```
 
 > TODO Change to native run (not in Docker)
 
 ---
+
+### Java Light 4J Rest Service
+
+Language: Java
+
+Framework: Oracle JDK8
+
+Main tutorial: https://github.com/networknt/light-example-4j/tree/master/demo
+
+Run:
+
+```bash
+$ mvn clean install
+$ java -jar target/service-example-0.1.0.jar
+```
+
+---
+
+### Java Spring Boot Rest Service
+
+Language: Java
+
+Framework: Oracle JDK8
+
+Main tutorial: http://spring.io/guides/gs/rest-service
+
+Run:
+
+```bash
+$ gradlew clean build
+$ gradlew bootRun
+```
+
+---
+
+### NodeJS Native Rest Service
+
+Language: JavaScript  
+
+Framework: Node.js 8.9.4 LTS  
+
+Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
+
+Run:  
+
+```bash
+$ node ./index.js
+```  
+
+---
+
+### NodeJS Express Rest Service
+
+Language: JavaScript  
+
+Framework: Node.js 8.9.4 LTS + Express 4.16.2
+
+Main tutorial: http://expressjs.com/en/starter/hello-world.html  
+
+Run:  
+
+```bash
+$ npm i  
+$ node ./index.js  
+```  
+
+---
+
+### Python Aiohttp Rest Service
+
+Language: Python 3.5  
+
+Framework: aiohttp 2.3.7, uvloop 0.9.1
+
+Main tutorial: https://aiohttp.readthedocs.io/en/stable/  
+
+Run:  
+
+```bash
+$ pip install -r requirements.txt
+$ python app.py
+```  
+
+---
+
+### Python Flask Rest Service
+
+Language: Python 3.5
+
+Framework: Flask 0.12.2
+
+Main tutorial: http://flask.pocoo.org/
+
+Run:
+
+```bash
+$ pip install -r requirements.txt
+$ FLASK_APP=app.py flask run
+```
+
+---
+
+### Python Sanic Rest Service
+
+Language: Python 3.5  
+
+Framework: Sanic 0.7.0, uvloop 0.9.1
+
+Main tutorial: http://sanic.readthedocs.io/en/latest/  
+
+Run:  
+
+```bash
+$ pip install -r requirements.txt
+$ python app.py
+```  
+
+---
+
+### Rust Iron Rest Service
+
+Language: RUST
+
+Framework: iron 0.6.0
+
+Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
+
+Run:  
+
+```bash
+$ docker build -t rustest .
+$ docker run -p 8080:8080 -it rustest:latest
+``` 
+
+> TODO Change to native run (not in Docker)
+
+---
+
+
 
 ## Hardware
 

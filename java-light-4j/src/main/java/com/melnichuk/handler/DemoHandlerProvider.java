@@ -8,6 +8,6 @@ import io.undertow.util.Methods;
 public class DemoHandlerProvider implements HandlerProvider {
 
     public HttpHandler getHandler() {
-        return Handlers.routing().add(Methods.GET, "api/test",new TextHandler());
+        return Handlers.routing().add(Methods.GET, "api/test", new TextHandler());
     }
 }
