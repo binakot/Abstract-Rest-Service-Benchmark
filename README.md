@@ -25,7 +25,8 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 | 1 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
 | 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
 | 1 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
-| 1 | [Java Light4J](/java-light-4j/) | Java | Oracle JDK 9 | 57162.40 |
+| 1 | [Java Light4J](/java-light-4j/) | Java | Oracle JDK 9 | 475553.57 |
+| 1 | [Java Spring Boot](/java-spring-boot/) | Java | Oracle JDK 9 | 70646.27 |
 
 ---
 
@@ -119,7 +120,7 @@ Run:
 ```bash
 $ stack setup
 $ stack build
-$ stack exec .stack-work/dist/x86_64-linux/Cabal-2.0.1.0/build/test-exe/test-exe
+$ stack exec .stack-work/dist/**/build/test-exe/test-exe
 ```
 
 Result:
@@ -146,7 +147,7 @@ Transfer/sec:     31.96MB
 
 Language: Java
 
-Framework: Oracle JDK8
+Framework: Oracle JDK 9
 
 Main tutorial: https://github.com/networknt/light-example-4j/tree/master/demo
 
@@ -157,21 +158,57 @@ $ mvn clean install
 $ java -jar target/service-example-0.1.0.jar
 ```
 
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.79ms   17.07ms 361.51ms   94.22%
+    Req/Sec    61.07k    19.75k  184.17k    74.83%
+  Latency Distribution
+     50%  609.00us
+     75%    3.33ms
+     90%   11.34ms
+     99%   92.78ms
+  285371526 requests in 10.00m, 35.35GB read
+Requests/sec: 475553.57
+Transfer/sec:     60.32MB
+```
+
 ---
 
 ### Java Spring Boot Rest Service
 
 Language: Java
 
-Framework: Oracle JDK8
+Framework: Oracle JDK 9
 
 Main tutorial: http://spring.io/guides/gs/rest-service
 
 Run:
 
 ```bash
-$ gradlew clean build
-$ gradlew bootRun
+$ gradle clean build
+$ java -jar build/libs/java-spring-boot-rest-service-1.0-SNAPSHOT.jar
+```
+
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.30ms   22.02ms   1.05s    92.97%
+    Req/Sec     8.90k     2.58k   23.11k    70.55%
+  Latency Distribution
+     50%    7.42ms
+     75%   13.41ms
+     90%   25.77ms
+     99%  107.94ms
+  42394116 requests in 10.00m, 5.02GB read
+Requests/sec:  70646.27
+Transfer/sec:      8.57MB
 ```
 
 ---
