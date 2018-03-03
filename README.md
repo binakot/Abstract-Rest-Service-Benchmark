@@ -10,7 +10,7 @@
 
 ## Benchmark
 
-The test with [wrk](https://github.com/wg/wrk):
+Command for [WRK](https://github.com/wg/wrk):
 
 ```bash
 $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
@@ -22,22 +22,23 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
-| 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
-| 1 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
-| 1 | [Java Light4J](/java-light-4j/) | Java | java 9.0.4 | 475553.57 |
-| 1 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
-| 1 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
-| 1 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
-| 1 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4713.28 |
-| 1 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 171.78 |
-| 1 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 6158.24 |
+| 1 | [Java Light 4J](/java-light-4j/) | Java | java 9.0.4 | 475553.57 |
+| 2 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
+| 3 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
+| 4 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
+| 5 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
+| 6 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 24573.25 |
+| 7 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
+| 8 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
+| 9 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 6158.24 |
+| 10 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4713.28 |
+| 11 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 171.78 |
 
 ---
 
 ## Services
 
-### .Net Core Native Rest Service
+### .Net Core Native
 
 Language: C#
 
@@ -72,7 +73,7 @@ Transfer/sec:      8.99MB
 
 ---
 
-### Go Gorilla/Mux Rest Service
+### Go Gorilla/Mux
 
 Language: Go
 
@@ -107,7 +108,7 @@ Transfer/sec:     16.88MB
 
 ---
 
-### Haskell Warp Rest Service
+### Haskell Warp
 
 Language: Haskell
 
@@ -148,7 +149,7 @@ Transfer/sec:     31.96MB
 
 ---
 
-### Java Light 4J Rest Service
+### Java Light 4J
 
 Language: Java
 
@@ -183,7 +184,7 @@ Transfer/sec:     60.32MB
 
 ---
 
-### Java Spring Boot Rest Service
+### Java Spring Boot
 
 Language: Java
 
@@ -218,7 +219,7 @@ Transfer/sec:      8.57MB
 
 ---
 
-### NodeJS Native Rest Service
+### NodeJS Native
 
 Language: JavaScript  
 
@@ -252,11 +253,11 @@ Transfer/sec:      2.76MB
 
 ---
 
-### NodeJS Express Rest Service
+### NodeJS Express
 
 Language: JavaScript  
 
-Framework: Node.js + Express
+Framework: Node.js, Express
 
 Main tutorial: http://expressjs.com/en/starter/hello-world.html  
 
@@ -287,11 +288,11 @@ Transfer/sec:      2.06MB
 
 ---
 
-### Python Aiohttp Rest Service
+### Python Aiohttp
 
 Language: Python
 
-Framework: Python 3, aiohttp 2.3.7
+Framework: Python 3, Aiohttp
 
 Main tutorial: https://aiohttp.readthedocs.io/en/stable/  
 
@@ -322,11 +323,11 @@ Transfer/sec:    754.86KB
 
 ---
 
-### Python Flask Rest Service
+### Python Flask
 
 Language: Python
 
-Framework: Python 3, Flask 0.12.2
+Framework: Python 3, Flask
 
 Main tutorial: http://flask.pocoo.org/
 
@@ -358,11 +359,11 @@ Transfer/sec:     28.01KB
 
 ---
 
-### Python Sanic Rest Service
+### Python Sanic
 
 Language: Python
 
-Framework: Python 3, Sanic 0.7.0
+Framework: Python 3, Sanic
 
 Main tutorial: http://sanic.readthedocs.io/en/latest/  
 
@@ -393,22 +394,39 @@ Transfer/sec:    793.84KB
 
 ---
 
-### Rust Iron Rest Service
+### Rust Iron
 
-Language: RUST
+Language: Rust
 
-Framework: iron 0.6.0
+Framework: Rust SDK, Iron
 
 Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
 
 Run:  
 
 ```bash
-$ docker build -t rustest .
-$ docker run -p 8080:8080 -it rustest:latest
+$ cargo build
+$ cargo run
 ``` 
 
-> TODO Change to native run (not in Docker)
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.65ms   23.55ms   1.39s    98.42%
+    Req/Sec     3.61k     5.56k   25.48k    87.28%
+  Latency Distribution
+     50%    1.63ms
+     75%    2.28ms
+     90%    3.36ms
+     99%   49.96ms
+  14747271 requests in 10.00m, 1.58GB read
+  Socket errors: connect 0, read 187, write 1133, timeout 0
+Requests/sec:  24573.25
+Transfer/sec:      2.70MB
+```
 
 ---
 
