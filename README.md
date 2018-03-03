@@ -25,8 +25,10 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 | 1 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
 | 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
 | 1 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
-| 1 | [Java Light4J](/java-light-4j/) | Java | Oracle JDK 9 | 475553.57 |
-| 1 | [Java Spring Boot](/java-spring-boot/) | Java | Oracle JDK 9 | 70646.27 |
+| 1 | [Java Light4J](/java-light-4j/) | Java | java 9.0.4 | 475553.57 |
+| 1 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
+| 1 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
+| 1 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
 
 ---
 
@@ -217,7 +219,7 @@ Transfer/sec:      8.57MB
 
 Language: JavaScript  
 
-Framework: Node.js 8.9.4 LTS  
+Framework: Node.js
 
 Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
 
@@ -227,13 +229,31 @@ Run:
 $ node ./index.js
 ```  
 
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.76ms    1.97ms 291.39ms   95.47%
+    Req/Sec     2.32k   183.03     3.38k    66.94%
+  Latency Distribution
+     50%   27.48ms
+     75%   28.09ms
+     90%   28.81ms
+     99%   33.67ms
+  11062139 requests in 10.00m, 1.62GB read
+Requests/sec:  18434.01
+Transfer/sec:      2.76MB
+```
+
 ---
 
 ### NodeJS Express Rest Service
 
 Language: JavaScript  
 
-Framework: Node.js 8.9.4 LTS + Express 4.16.2
+Framework: Node.js + Express
 
 Main tutorial: http://expressjs.com/en/starter/hello-world.html  
 
@@ -243,6 +263,24 @@ Run:
 $ npm i  
 $ node ./index.js  
 ```  
+
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.68ms    4.00ms 373.69ms   92.76%
+    Req/Sec     1.24k   108.08     1.94k    88.47%
+  Latency Distribution
+     50%   51.44ms
+     75%   52.59ms
+     90%   53.93ms
+     99%   63.87ms
+  5939587 requests in 10.00m, 1.21GB read
+Requests/sec:   9897.75
+Transfer/sec:      2.06MB
+```
 
 ---
 
