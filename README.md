@@ -29,6 +29,9 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 | 1 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
 | 1 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
 | 1 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
+| 1 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4713.28 |
+| 1 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 171.78 |
+| 1 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 6158.24 |
 
 ---
 
@@ -286,9 +289,9 @@ Transfer/sec:      2.06MB
 
 ### Python Aiohttp Rest Service
 
-Language: Python 3.5  
+Language: Python
 
-Framework: aiohttp 2.3.7, uvloop 0.9.1
+Framework: Python 3, aiohttp 2.3.7
 
 Main tutorial: https://aiohttp.readthedocs.io/en/stable/  
 
@@ -299,13 +302,31 @@ $ pip install -r requirements.txt
 $ python app.py
 ```  
 
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.61ms    6.84ms 235.63ms   88.72%
+    Req/Sec   607.27    112.78     1.29k    90.23%
+  Latency Distribution
+     50%  107.01ms
+     75%  110.69ms
+     90%  115.46ms
+     99%  124.29ms
+  2828423 requests in 10.00m, 442.37MB read
+Requests/sec:   4713.28
+Transfer/sec:    754.86KB
+```
+
 ---
 
 ### Python Flask Rest Service
 
-Language: Python 3.5
+Language: Python
 
-Framework: Flask 0.12.2
+Framework: Python 3, Flask 0.12.2
 
 Main tutorial: http://flask.pocoo.org/
 
@@ -316,13 +337,32 @@ $ pip install -r requirements.txt
 $ FLASK_APP=app.py flask run
 ```
 
+Result:
+
+```text
+Running 10m test @ http://localhost:5000/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01s     3.45s    0.92m    91.12%
+    Req/Sec   239.42    269.75     1.90k    95.32%
+  Latency Distribution
+     50%   68.82ms
+     75%   72.28ms
+     90%    1.04s
+     99%   17.41s
+  103085 requests in 10.00m, 16.42MB read
+  Socket errors: connect 512, read 711, write 609, timeout 1
+Requests/sec:    171.78
+Transfer/sec:     28.01KB
+```
+
 ---
 
 ### Python Sanic Rest Service
 
-Language: Python 3.5  
+Language: Python
 
-Framework: Sanic 0.7.0, uvloop 0.9.1
+Framework: Python 3, Sanic 0.7.0
 
 Main tutorial: http://sanic.readthedocs.io/en/latest/  
 
@@ -332,6 +372,24 @@ Run:
 $ pip install -r requirements.txt
 $ python app.py
 ```  
+
+Results:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    83.11ms    5.97ms 385.64ms   90.15%
+    Req/Sec   773.56    252.68     1.89k    79.55%
+  Latency Distribution
+     50%   82.53ms
+     75%   84.57ms
+     90%   88.25ms
+     99%   96.46ms
+  3695508 requests in 10.00m, 465.21MB read
+Requests/sec:   6158.24
+Transfer/sec:    793.84KB
+```
 
 ---
 
