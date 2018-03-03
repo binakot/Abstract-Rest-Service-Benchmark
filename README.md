@@ -22,6 +22,7 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
+| 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 linux/amd64 | 153889.88 |
 | 1 | [.Net Core Native](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
 
 ---
@@ -67,7 +68,7 @@ Transfer/sec:      8.99MB
 
 Language: Go
 
-Framework: Go SDK 1.9.2
+Framework: Go SDK
 
 Main tutorial: https://www.codementor.io/codehakase/building-a-restful-api-with-golang-a6yivzqdo
 
@@ -76,6 +77,24 @@ Run:
 ```bash
 $ go build
 $ go-rest-service
+```
+
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.34ms    7.32ms 209.12ms   88.57%
+    Req/Sec    19.33k     4.71k   50.04k    64.94%
+  Latency Distribution
+     50%    3.46ms
+     75%    6.16ms
+     90%   13.90ms
+     99%   35.12ms
+  92346022 requests in 10.00m, 9.89GB read
+Requests/sec: 153889.88
+Transfer/sec:     16.88MB
 ```
 
 ---
