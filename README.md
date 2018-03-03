@@ -22,8 +22,10 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 linux/amd64 | 153889.88 |
-| 1 | [.Net Core Native](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
+| 1 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
+| 1 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
+| 1 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
+| 1 | [Java Light4J](/java-light-4j/) | Java | Oracle JDK 9 | 57162.40 |
 
 ---
 
@@ -40,8 +42,8 @@ Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-
 Run:
 
 ```bash
-$ dotnet publish -c release -o published
-$ dotnet published/dotNetCoreRestService.dll
+$ dotnet publish -c release -o release
+$ dotnet release/dotNetCoreRestService.dll
 ```
 
 Result:
@@ -103,22 +105,40 @@ Transfer/sec:     16.88MB
 
 Language: Haskell
 
-Framework: warp 3.2.13
+Framework: GHC
 
-Main tutorial: http://taylor.fausak.me/2014/10/21/building-a-json-rest-api-in-haskell/
+Main tutorial: http://taylor.fausak.me/2014/10/21/building-a-json-rest-api-in-haskell
 
 Requirements:
 
-* Install Haskell stack: https://docs.haskellstack.org/en/stable/README/
+* Install Haskell stack: https://docs.haskellstack.org/en/stable/README
 * Install Cabal package: `cabal install Cabal-2.0.1.1`
 
 Run:
 
 ```bash
-$ stack image container
+$ stack setup
+$ stack build
+$ stack exec .stack-work/dist/x86_64-linux/Cabal-2.0.1.0/build/test-exe/test-exe
 ```
 
-> TODO Change to native run (not in Docker)
+Result:
+
+```text
+Running 10m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.10ms   19.10ms 444.99ms   93.62%
+    Req/Sec    27.47k     9.44k   83.13k    71.80%
+  Latency Distribution
+     50%    2.12ms
+     75%    3.23ms
+     90%   11.23ms
+     99%  102.01ms
+  128101480 requests in 10.00m, 18.73GB read
+Requests/sec: 213436.16
+Transfer/sec:     31.96MB
+```
 
 ---
 
@@ -260,18 +280,6 @@ $ docker run -p 8080:8080 -it rustest:latest
 ---
 
 ## Hardware
-
-### Home Station
-
-Model: [iMac 18.3](https://support.apple.com/kb/SP760)
-
-CPU: 3.4GHz quad-core Intel Core i5 (Turbo Boost up to 3.8GHz)
-
-RAM: 8GB (two 4GB) of 2400MHz DDR4 memory
-
-HDD: 1TB Fusion Drive
-
-### Real Server
 
 ```text
                           ./+o+-       root@ubuntu
