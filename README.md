@@ -10,13 +10,11 @@
 
 ## Benchmark
 
-The simple test with [AB](https://httpd.apache.org/docs/2.4/programs/ab.html):
+The test with [wrk](https://github.com/wg/wrk):
 
 ```bash
-$ ab -n 100000 -c 100 http://localhost:8080/api/test
+$ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 ```
-
-> TODO Change to [WRK](https://github.com/wg/wrk)
 
 ---
 
@@ -24,7 +22,7 @@ $ ab -n 100000 -c 100 http://localhost:8080/api/test
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [?](/?/) | ? | ? | ? |
+| 1 | [.Net Core Native](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
 
 ---
 
@@ -34,7 +32,7 @@ $ ab -n 100000 -c 100 http://localhost:8080/api/test
 
 Language: C#
 
-Framework: .NET Core (ASP.NET Core 2.0)
+Framework: .NET Core (ASP.NET Core 2)
 
 Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
 
@@ -43,6 +41,24 @@ Run:
 ```bash
 $ dotnet publish -c release -o published
 $ dotnet published/dotNetCoreRestService.dll
+```
+
+Result:
+
+```text
+Running 10m test @ http://localhost:5000/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.67ms   17.50ms 282.63ms   92.66%
+    Req/Sec     7.29k     1.86k   31.28k    75.47%
+  Latency Distribution
+     50%    7.71ms
+     75%    9.47ms
+     90%   20.57ms
+     99%  100.31ms
+  34302965 requests in 10.00m, 5.27GB read
+Requests/sec:  57162.40
+Transfer/sec:      8.99MB
 ```
 
 ---
@@ -224,8 +240,6 @@ $ docker run -p 8080:8080 -it rustest:latest
 
 ---
 
-
-
 ## Hardware
 
 ### Home Station
@@ -240,4 +254,23 @@ HDD: 1TB Fusion Drive
 
 ### Real Server
 
-> TODO
+```text
+                          ./+o+-       root@ubuntu
+                  yyyyy- -yyyyyy+      OS: Ubuntu 16.04 xenial
+               ://+//////-yyyyyyo      Kernel: x86_64 Linux 4.4.0-62-generic
+           .++ .:/++++++/-.+sss/`      Uptime: 26m
+         .:++o:  /++++++++/:--:/-      Packages: 462
+        o:+o+:++.`..```.-/oo+++++/     Shell: bash 4.3.48
+       .:+o:+o/.          `+sssoo+/    CPU: 8x Intel Xeon CPU E5-2660 v3 @ 2.6GHz
+  .++/+:+oo+o:`             /sssooo.   RAM: 313MiB / 16046MiB
+ /+++//+:`oo+o               /::--:.
+ \+/+o+++`o++o               ++////.
+  .++.o+++oo+:`             /dddhhh.
+       .+.o+oo:.          `oddhhhh+
+        \+.++o+o``-````.:ohdhhhhh+
+         `:o+++ `ohhhhhhhhyo++os:
+           .o:`.syhhhhhhh/.oo++o`
+               /osyyyyyyo++ooo+++/
+                   ````` +oo+++o\:
+                          `oo++.
+```
