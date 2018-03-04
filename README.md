@@ -26,11 +26,11 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 | 2 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
 | 3 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
 | 4 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
-| 5 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
-| 6 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 24573.25 |
-| 7 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
-| 8 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
-| 9 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 6158.24 |
+| 5 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 70470.74 |
+| 6 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
+| 7 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 24573.25 |
+| 8 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
+| 9 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
 | 10 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4713.28 |
 | 11 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 171.78 |
 
@@ -377,19 +377,19 @@ $ python app.py
 Results:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 10m test @ http://localhost:8000/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    83.11ms    5.97ms 385.64ms   90.15%
-    Req/Sec   773.56    252.68     1.89k    79.55%
+    Latency    11.26ms   18.75ms 258.58ms   93.08%
+    Req/Sec     9.08k     2.55k   27.32k    74.83%
   Latency Distribution
-     50%   82.53ms
-     75%   84.57ms
-     90%   88.25ms
-     99%   96.46ms
-  3695508 requests in 10.00m, 465.21MB read
-Requests/sec:   6158.24
-Transfer/sec:    793.84KB
+     50%    6.09ms
+     75%   10.06ms
+     90%   13.82ms
+     99%  103.43ms
+  42285486 requests in 10.00m, 5.20GB read
+Requests/sec:  70470.74
+Transfer/sec:      8.87MB
 ```
 
 ---
