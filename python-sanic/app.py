@@ -10,7 +10,7 @@ app = Sanic(configure_logging=False)
 
 @app.route("/api/test")
 async def test(request):
-    return text("Hello, world!")
+    return text("Hello, World!")
 
 
 if __name__ == "__main__":
