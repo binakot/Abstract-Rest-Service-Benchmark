@@ -1,0 +1,8 @@
+[package]
+name = "hello"
+version = "0.1.0"
+authors = ["Konstantin Chugalinskiy <kchugalinskiy@yandex.ru>"]
+
+[dependencies]
+iron = "0.6.0"
+router = "0.6.0"
