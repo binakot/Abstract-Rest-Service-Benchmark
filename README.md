@@ -49,6 +49,7 @@ Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-
 Run:
 
 ```bash
+$ cd dotNetCoreRestService
 $ dotnet publish -c release -o release
 $ dotnet release/dotNetCoreRestService.dll
 ```
@@ -221,17 +222,17 @@ Transfer/sec:      8.57MB
 
 ### NodeJS Native
 
-Language: JavaScript  
+Language: JavaScript
 
 Framework: Node.js
 
-Main tutorial: https://nodejs.org/api/http.html#http_class_http_server  
+Main tutorial: https://nodejs.org/api/http.html#http_class_http_server
 
-Run:  
+Run:
 
 ```bash
 $ node ./index.js
-```  
+```
 
 Result:
 
@@ -255,18 +256,18 @@ Transfer/sec:      2.76MB
 
 ### NodeJS Express
 
-Language: JavaScript  
+Language: JavaScript
 
 Framework: Node.js, Express
 
-Main tutorial: http://expressjs.com/en/starter/hello-world.html  
+Main tutorial: http://expressjs.com/en/starter/hello-world.html
 
-Run:  
+Run:
 
 ```bash
-$ npm i  
-$ node ./index.js  
-```  
+$ npm i
+$ node ./index.js
+```
 
 Result:
 
@@ -294,14 +295,14 @@ Language: Python
 
 Framework: Python 3, Aiohttp
 
-Main tutorial: https://aiohttp.readthedocs.io/en/stable/  
+Main tutorial: https://aiohttp.readthedocs.io/en/stable/
 
-Run:  
+Run:
 
 ```bash
 $ pip install -r requirements.txt
 $ python app.py
-```  
+```
 
 Result:
 
@@ -365,14 +366,14 @@ Language: Python
 
 Framework: Python 3, Sanic
 
-Main tutorial: http://sanic.readthedocs.io/en/latest/  
+Main tutorial: http://sanic.readthedocs.io/en/latest/
 
-Run:  
+Run:
 
 ```bash
 $ pip install -r requirements.txt
 $ python app.py
-```  
+```
 
 Results:
 
@@ -402,12 +403,12 @@ Framework: Rust SDK, Iron
 
 Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
 
-Run:  
+Run:
 
 ```bash
 $ cargo build
 $ cargo run
-``` 
+```
 
 Result:
 
