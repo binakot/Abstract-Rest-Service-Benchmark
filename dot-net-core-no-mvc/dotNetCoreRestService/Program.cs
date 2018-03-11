@@ -2,14 +2,13 @@ using System;
 using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.Internal;
 
 namespace dotNetCoreRestService
 {
     public static class Program
     {
-        private const string ApiPath = "/api/test";
-
         public static void Main(string[] args)
         {
             var message = Encoding.UTF8.GetBytes("Hello, World!");
@@ -17,6 +16,8 @@ namespace dotNetCoreRestService
 
             var notFoundMessage = Encoding.UTF8.GetBytes("Not Found");
             var notFoundMessageSize = notFoundMessage.Length;
+
+            var apiPath = new PathString("/api/test");
 
             new WebHostBuilder()
                 .UseKestrel(options =>
@@ -28,7 +29,7 @@ namespace dotNetCoreRestService
                 .UseLibuv(options => { options.ThreadCount = Environment.ProcessorCount; })
                 .Configure(app => app.Run(httpContext =>
                 {
-                    if (httpContext.Request.Path == ApiPath)
+                    if (httpContext.Request.Path == apiPath)
                     {
                         return httpContext.Response.Body.WriteAsync(message, 0, messageSize);
                     }
