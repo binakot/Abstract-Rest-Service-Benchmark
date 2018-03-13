@@ -13,7 +13,7 @@
 Command for [WRK](https://github.com/wg/wrk):
 
 ```bash
-$ wrk -t8 -c512 -d1m --timeout 10s --latency http://localhost:port/api/test
+$ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 ```
 
 ---
@@ -22,53 +22,97 @@ $ wrk -t8 -c512 -d1m --timeout 10s --latency http://localhost:port/api/test
 
 |   | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-| 1 | [Java Light 4J](/java-light-4j/) | Java | java 9.0.4 | 475553.57 |
-| 2 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 213436.16 |
-| 3 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
-| 4 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
-| 5 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 70470.74 |
-| 6 | [.Net Core MVC](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
-| 7 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 24573.25 |
-| 8 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
-| 9 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
-| 10 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4713.28 |
-| 11 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 171.78 |
+| 1 | [Java Light 4J](/java-light-4j/) | Java | java 9.0.4 | 401511.94 |
+| 2 | [.Net Core](/dot-net-core-no-mvc/) | C# | dotnet 2.1.4 | 249758.46 |
+| 3 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 191020.62 |
+| 4 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 186726.17 |
+| 5 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 131499.79 |
+| 6 | [.Net Core MVC](/dot-net-core/) | C# | dotnet 2.1.4 | 99091.85 |
+| 7 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 94132.92 |
+| 8 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 74854.41 |
+| 9 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 58769.29 |
+| 10 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 56253.12 |
+| 11 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4603.01 |
+| 12 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 200.44 |
 
 ---
 
 ## Services
 
-### .Net Core With MVC
+### .Net Core
 
 Language: C#
 
-Framework: .NET Core (ASP.NET Core 2)
+Framework: .NET Core 2
 
 Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
 
 Run:
 
 ```bash
-$ dotnet publish -c release -o release
-$ dotnet release/dotNetCoreRestService.dll
+$ dotnet restore
+$ dotnet publish -c Release
+$ export ASPNETCORE_ENVIRONMENT=Production
+$ export ASPNETCORE_URLS=http://0.0.0.0:8080
+$ cd ./dotNetCoreRestService/bin/Release/netcoreapp2.0/publish
+$ dotnet dotNetCoreRestService.dll
 ```
 
 Result:
 
 ```text
-Running 10m test @ http://localhost:5000/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    12.67ms   17.50ms 282.63ms   92.66%
-    Req/Sec     7.29k     1.86k   31.28k    75.47%
+    Latency     8.95ms   30.34ms 474.95ms   94.12%
+    Req/Sec    32.65k     7.53k   76.41k    87.22%
   Latency Distribution
-     50%    7.71ms
-     75%    9.47ms
-     90%   20.57ms
-     99%  100.31ms
-  34302965 requests in 10.00m, 5.27GB read
-Requests/sec:  57162.40
-Transfer/sec:      8.99MB
+     50%    1.93ms
+     75%    2.12ms
+     90%    3.88ms
+     99%  171.71ms
+  29975219 requests in 2.00m, 2.99GB read
+Requests/sec: 249758.46
+Transfer/sec:     25.49MB
+```
+
+---
+
+### ASP.Net Core
+
+Language: C#
+
+Framework: ASP.NET Core 2 with MVC
+
+Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+
+Run:
+
+```bash
+$ dotnet restore
+$ dotnet publish -c Release
+$ export ASPNETCORE_ENVIRONMENT=Production
+$ export ASPNETCORE_URLS=http://0.0.0.0:8080
+$ cd ./dotNetCoreRestService/bin/Release/netcoreapp2.0/publish
+$ dotnet dotNetCoreRestService.dll
+```
+
+Result:
+
+```text
+Running 2m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.87ms   25.89ms 563.33ms   95.83%
+    Req/Sec    12.77k     2.82k   35.65k    85.48%
+  Latency Distribution
+     50%    4.60ms
+     75%    6.07ms
+     90%   11.07ms
+     99%  159.56ms
+  11900081 requests in 2.00m, 1.83GB read
+Requests/sec:  99091.85
+Transfer/sec:     15.59MB
 ```
 
 ---
@@ -85,25 +129,25 @@ Run:
 
 ```bash
 $ go build
-$ go-rest-service
+$ ./go
 ```
 
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     5.34ms    7.32ms 209.12ms   88.57%
-    Req/Sec    19.33k     4.71k   50.04k    64.94%
+    Latency     6.31ms    8.82ms 205.24ms   88.57%
+    Req/Sec    16.59k     4.12k   57.56k    68.34%
   Latency Distribution
-     50%    3.46ms
-     75%    6.16ms
-     90%   13.90ms
-     99%   35.12ms
-  92346022 requests in 10.00m, 9.89GB read
-Requests/sec: 153889.88
-Transfer/sec:     16.88MB
+     50%    3.81ms
+     75%    7.12ms
+     90%   16.60ms
+     99%   42.44ms
+  15792496 requests in 2.00m, 1.69GB read
+Requests/sec: 131499.79
+Transfer/sec:     14.42MB
 ```
 
 ---
@@ -132,19 +176,19 @@ $ stack exec .stack-work/dist/**/build/test-exe/test-exe
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.10ms   19.10ms 444.99ms   93.62%
-    Req/Sec    27.47k     9.44k   83.13k    71.80%
+    Latency     8.54ms   26.91ms 490.86ms   94.97%
+    Req/Sec    24.79k     7.55k   47.81k    75.31%
   Latency Distribution
-     50%    2.12ms
-     75%    3.23ms
-     90%   11.23ms
-     99%  102.01ms
-  128101480 requests in 10.00m, 18.73GB read
-Requests/sec: 213436.16
-Transfer/sec:     31.96MB
+     50%    2.42ms
+     75%    3.34ms
+     90%    8.94ms
+     99%  164.24ms
+  22940607 requests in 2.00m, 3.35GB read
+Requests/sec: 191020.62
+Transfer/sec:     28.60MB
 ```
 
 ---
@@ -167,19 +211,19 @@ $ java -jar target/service-example-0.1.0.jar
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     5.79ms   17.07ms 361.51ms   94.22%
-    Req/Sec    61.07k    19.75k  184.17k    74.83%
+    Latency     7.32ms   25.79ms 545.85ms   95.54%
+    Req/Sec    52.35k    17.02k  137.38k    80.96%
   Latency Distribution
-     50%  609.00us
-     75%    3.33ms
-     90%   11.34ms
-     99%   92.78ms
-  285371526 requests in 10.00m, 35.35GB read
-Requests/sec: 475553.57
-Transfer/sec:     60.32MB
+     50%  649.00us
+     75%    3.80ms
+     90%   10.81ms
+     99%  148.73ms
+  48218095 requests in 2.00m, 5.97GB read
+Requests/sec: 401511.94
+Transfer/sec:     50.93MB
 ```
 
 ---
@@ -202,24 +246,24 @@ $ java -jar build/libs/java-spring-boot-rest-service-1.0-SNAPSHOT.jar
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    12.30ms   22.02ms   1.05s    92.97%
-    Req/Sec     8.90k     2.58k   23.11k    70.55%
+    Latency    14.93ms   28.96ms 894.46ms   93.82%
+    Req/Sec     7.10k     2.45k   20.45k    72.47%
   Latency Distribution
-     50%    7.42ms
-     75%   13.41ms
-     90%   25.77ms
-     99%  107.94ms
-  42394116 requests in 10.00m, 5.02GB read
-Requests/sec:  70646.27
-Transfer/sec:      8.57MB
+     50%    8.15ms
+     75%   15.47ms
+     90%   29.98ms
+     99%  133.78ms
+  6755048 requests in 2.00m, 819.37MB read
+Requests/sec:  56253.12
+Transfer/sec:      6.82MB
 ```
 
 ---
 
-### NodeJS Native
+### NodeJS
 
 Language: JavaScript  
 
@@ -236,19 +280,19 @@ $ node ./index.js
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    27.76ms    1.97ms 291.39ms   95.47%
-    Req/Sec     2.32k   183.03     3.38k    66.94%
+    Latency    13.40ms   36.18ms 491.10ms   93.96%
+    Req/Sec    12.40k     2.82k   67.15k    90.69%
   Latency Distribution
-     50%   27.48ms
-     75%   28.09ms
-     90%   28.81ms
-     99%   33.67ms
-  11062139 requests in 10.00m, 1.62GB read
-Requests/sec:  18434.01
-Transfer/sec:      2.76MB
+     50%    4.95ms
+     75%    5.93ms
+     90%    8.90ms
+     99%  192.05ms
+  11306862 requests in 2.00m, 1.65GB read
+Requests/sec:  94132.92
+Transfer/sec:     14.09MB
 ```
 
 ---
@@ -264,26 +308,26 @@ Main tutorial: http://expressjs.com/en/starter/hello-world.html
 Run:  
 
 ```bash
-$ npm i  
-$ node ./index.js  
+$ npm i
+$ node ./index.js
 ```  
 
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    51.68ms    4.00ms 373.69ms   92.76%
-    Req/Sec     1.24k   108.08     1.94k    88.47%
+    Latency    15.96ms   34.75ms 590.39ms   94.11%
+    Req/Sec     7.71k     1.60k   11.56k    90.58%
   Latency Distribution
-     50%   51.44ms
-     75%   52.59ms
-     90%   53.93ms
-     99%   63.87ms
-  5939587 requests in 10.00m, 1.21GB read
-Requests/sec:   9897.75
-Transfer/sec:      2.06MB
+     50%    7.83ms
+     75%    9.27ms
+     90%   13.25ms
+     99%  189.66ms
+  7053065 requests in 2.00m, 1.43GB read
+Requests/sec:  58769.29
+Transfer/sec:     12.22MB
 ```
 
 ---
@@ -306,19 +350,19 @@ $ python app.py
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   108.61ms    6.84ms 235.63ms   88.72%
-    Req/Sec   607.27    112.78     1.29k    90.23%
+    Latency   111.11ms    9.03ms 239.02ms   93.79%
+    Req/Sec   597.05    126.48     1.29k    87.51%
   Latency Distribution
-     50%  107.01ms
-     75%  110.69ms
-     90%  115.46ms
-     99%  124.29ms
-  2828423 requests in 10.00m, 442.37MB read
-Requests/sec:   4713.28
-Transfer/sec:    754.86KB
+     50%  109.82ms
+     75%  112.84ms
+     90%  116.47ms
+     99%  129.17ms
+  552817 requests in 2.00m, 86.46MB read
+Requests/sec:   4603.01
+Transfer/sec:    737.20KB
 ```
 
 ---
@@ -335,26 +379,26 @@ Run:
 
 ```bash
 $ pip install -r requirements.txt
-$ FLASK_APP=app.py flask run
+$ FLASK_APP=app.py flask run --host=0.0.0.0 --port=8080
 ```
 
 Result:
 
 ```text
-Running 10m test @ http://localhost:5000/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.01s     3.45s    0.92m    91.12%
-    Req/Sec   239.42    269.75     1.90k    95.32%
+    Latency   182.08ms  699.71ms   6.62s    97.68%
+    Req/Sec   215.45    181.60     0.94k    64.36%
   Latency Distribution
-     50%   68.82ms
-     75%   72.28ms
-     90%    1.04s
-     99%   17.41s
-  103085 requests in 10.00m, 16.42MB read
-  Socket errors: connect 512, read 711, write 609, timeout 1
-Requests/sec:    171.78
-Transfer/sec:     28.01KB
+     50%   67.76ms
+     75%   69.76ms
+     90%   71.13ms
+     99%    5.83s
+  24068 requests in 2.00m, 3.83MB read
+  Socket errors: connect 0, read 80, write 0, timeout 924
+Requests/sec:    200.44
+Transfer/sec:     32.69KB
 ```
 
 ---
@@ -377,19 +421,19 @@ $ python app.py
 Results:
 
 ```text
-Running 10m test @ http://localhost:8000/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    11.26ms   18.75ms 258.58ms   93.08%
-    Req/Sec     9.08k     2.55k   27.32k    74.83%
+    Latency    13.38ms   30.03ms 413.05ms   94.39%
+    Req/Sec     9.82k     5.34k   34.00k    74.06%
   Latency Distribution
-     50%    6.09ms
-     75%   10.06ms
-     90%   13.82ms
-     99%  103.43ms
-  42285486 requests in 10.00m, 5.20GB read
-Requests/sec:  70470.74
-Transfer/sec:      8.87MB
+     50%    6.16ms
+     75%   10.80ms
+     90%   17.10ms
+     99%  173.38ms
+  8996252 requests in 2.00m, 1.11GB read
+Requests/sec:  74854.41
+Transfer/sec:      9.42MB
 ```
 
 ---
@@ -406,26 +450,26 @@ Run:
 
 ```bash
 $ cargo build
-$ cargo run
+$ cargo run --release
 ``` 
 
 Result:
 
 ```text
-Running 10m test @ http://localhost:8080/api/test
+Running 2m test @ http://localhost:8080/api/test
   8 threads and 512 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     3.65ms   23.55ms   1.39s    98.42%
-    Req/Sec     3.61k     5.56k   25.48k    87.28%
+    Latency   709.82us    7.34ms 443.60ms   99.34%
+    Req/Sec    27.47k    13.86k  110.07k    74.57%
   Latency Distribution
-     50%    1.63ms
-     75%    2.28ms
-     90%    3.36ms
-     99%   49.96ms
-  14747271 requests in 10.00m, 1.58GB read
-  Socket errors: connect 0, read 187, write 1133, timeout 0
-Requests/sec:  24573.25
-Transfer/sec:      2.70MB
+     50%  152.00us
+     75%  261.00us
+     90%  435.00us
+     99%    1.20ms
+  22425623 requests in 2.00m, 2.40GB read
+  Socket errors: connect 0, read 8, write 0, timeout 0
+Requests/sec: 186726.17
+Transfer/sec:     20.48MB
 ```
 
 ---
