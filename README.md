@@ -13,7 +13,7 @@
 Command for [WRK](https://github.com/wg/wrk):
 
 ```bash
-$ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
+$ wrk -t8 -c512 -d1m --timeout 10s --latency http://localhost:port/api/test
 ```
 
 ---
@@ -27,7 +27,7 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 | 3 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 153889.88 |
 | 4 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 70646.27 |
 | 5 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 70470.74 |
-| 6 | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
+| 6 | [.Net Core MVC](/dot-net-core/) | C# | dotnet 2.1.4 | 57162.40 |
 | 7 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 24573.25 |
 | 8 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 18434.01 |
 | 9 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 9897.75 |
@@ -38,7 +38,7 @@ $ wrk -t8 -c512 -d10m --timeout 1m --latency http://localhost:port/api/test
 
 ## Services
 
-### .Net Core Native
+### .Net Core With MVC
 
 Language: C#
 

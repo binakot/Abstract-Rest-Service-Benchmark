@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="run.sh">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
   </ItemGroup>
-
 </Project>
