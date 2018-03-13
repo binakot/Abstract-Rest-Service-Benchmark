@@ -5,6 +5,7 @@ import logging
 from sanic import Sanic
 from sanic.response import text
 
+
 app = Sanic(configure_logging=False)
 
 
@@ -15,4 +16,4 @@ async def test(request):
 
 if __name__ == "__main__":
     asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-    app.run(host="0.0.0.0", port=8000, debug=False, workers=8)
+    app.run(host="0.0.0.0", port=8080, debug=False, workers=8)
