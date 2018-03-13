@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Freya.Hopac" Version="4.0.0-alpha-170404" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>
