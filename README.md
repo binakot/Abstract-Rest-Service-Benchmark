@@ -1,6 +1,6 @@
 # Abstract Rest Service Benchmark
 
-## Requiremnts
+## Requirements
 
 * PORT: `8080`
 
