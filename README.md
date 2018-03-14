@@ -27,13 +27,14 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 | 3 | [Haskell Warp](/haskell/) | Haskell | ghc 7.10.3 | 191020.62 |
 | 4 | [Rust Iron](/rust/) | Rust | rust 1.24.1 + iron 0.6.0 | 186726.17 |
 | 5 | [Go Gorilla/Mux](/go/) | Go | go 1.9.4 | 131499.79 |
-| 6 | [.Net Core MVC](/dot-net-core/) | C# | dotnet 2.1.4 | 99091.85 |
+| 6 | [ASP.Net Core MVC](/dot-net-core/) | C# | dotnet 2.1.4 | 99091.85 |
 | 7 | [NodeJS](/node.js/) | JavaScript | nodejs 8.9.4 | 94132.92 |
 | 8 | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic 0.7.0 | 74854.41 |
 | 9 | [NodeJS Express](/node.js-express/) | JavaScript | nodejs 8.9.4 + express 4.16.2 | 58769.29 |
 | 10 | [Java Spring Boot](/java-spring-boot/) | Java | java 9.0.4 | 56253.12 |
-| 11 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4603.01 |
-| 12 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 200.44 |
+| 11 | [.Net Core Freya](/dot-net-core-hopac-freya/) | F# | dotnet 2.1.4 | 49736.08 |
+| 12 | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp 2.3.7 | 4603.01 |
+| 13 | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask 0.12.2 | 200.44 |
 
 ---
 
@@ -43,9 +44,7 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 
 Language: C#
 
-Framework: .NET Core 2
-
-Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+Framework: .Net Core 2
 
 Run:
 
@@ -82,7 +81,7 @@ Transfer/sec:     25.49MB
 
 Language: C#
 
-Framework: ASP.NET Core 2 with MVC
+Framework: .Net Core 2, ASP.NET Core MVC
 
 Main tutorial: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
 
@@ -113,6 +112,43 @@ Running 2m test @ http://localhost:8080/api/test
   11900081 requests in 2.00m, 1.83GB read
 Requests/sec:  99091.85
 Transfer/sec:     15.59MB
+```
+
+---
+
+### .Net Core Freya 
+
+Language: F#
+
+Framework: .Net Core 2, Freya
+
+Run:
+
+```bash
+$ dotnet restore
+$ dotnet publish -c Release
+$ export ASPNETCORE_ENVIRONMENT=Production
+$ export ASPNETCORE_URLS=http://0.0.0.0:8080
+$ cd ./bin/Release/netcoreapp2.0/publish
+$ dotnet dot-net-core-hopac-freya.dll
+```
+
+Result:
+
+```text
+Running 2m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.03ms   22.22ms 253.80ms   95.60%
+    Req/Sec     6.34k     1.49k   11.31k    78.25%
+  Latency Distribution
+     50%    9.68ms
+     75%   11.09ms
+     90%   17.40ms
+     99%  142.19ms
+  5971487 requests in 2.00m, 831.45MB read
+Requests/sec:  49736.08
+Transfer/sec:      6.93MB
 ```
 
 ---
@@ -148,47 +184,6 @@ Running 2m test @ http://localhost:8080/api/test
   15792496 requests in 2.00m, 1.69GB read
 Requests/sec: 131499.79
 Transfer/sec:     14.42MB
-```
-
----
-
-### Haskell Warp
-
-Language: Haskell
-
-Framework: GHC
-
-Main tutorial: http://taylor.fausak.me/2014/10/21/building-a-json-rest-api-in-haskell
-
-Requirements:
-
-* Install Haskell stack: https://docs.haskellstack.org/en/stable/README
-* Install Cabal package: `cabal install Cabal-2.0.1.1`
-
-Run:
-
-```bash
-$ stack setup
-$ stack build
-$ stack exec .stack-work/dist/**/build/test-exe/test-exe
-```
-
-Result:
-
-```text
-Running 2m test @ http://localhost:8080/api/test
-  8 threads and 512 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     8.54ms   26.91ms 490.86ms   94.97%
-    Req/Sec    24.79k     7.55k   47.81k    75.31%
-  Latency Distribution
-     50%    2.42ms
-     75%    3.34ms
-     90%    8.94ms
-     99%  164.24ms
-  22940607 requests in 2.00m, 3.35GB read
-Requests/sec: 191020.62
-Transfer/sec:     28.60MB
 ```
 
 ---
@@ -434,6 +429,47 @@ Running 2m test @ http://localhost:8080/api/test
   8996252 requests in 2.00m, 1.11GB read
 Requests/sec:  74854.41
 Transfer/sec:      9.42MB
+```
+
+---
+
+### Haskell Warp
+
+Language: Haskell
+
+Framework: GHC
+
+Main tutorial: http://taylor.fausak.me/2014/10/21/building-a-json-rest-api-in-haskell
+
+Requirements:
+
+* Install Haskell stack: https://docs.haskellstack.org/en/stable/README
+* Install Cabal package: `cabal install Cabal-2.0.1.1`
+
+Run:
+
+```bash
+$ stack setup
+$ stack build
+$ stack exec .stack-work/dist/**/build/test-exe/test-exe
+```
+
+Result:
+
+```text
+Running 2m test @ http://localhost:8080/api/test
+  8 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.54ms   26.91ms 490.86ms   94.97%
+    Req/Sec    24.79k     7.55k   47.81k    75.31%
+  Latency Distribution
+     50%    2.42ms
+     75%    3.34ms
+     90%    8.94ms
+     99%  164.24ms
+  22940607 requests in 2.00m, 3.35GB read
+Requests/sec: 191020.62
+Transfer/sec:     28.60MB
 ```
 
 ---
