@@ -433,6 +433,26 @@ Transfer/sec:      9.42MB
 
 ---
 
+### Python API Star
+
+Language: Python
+
+Framework: Python 3, API Star
+
+
+Main tutorial: https://github.com/encode/apistar
+
+Run:
+
+```bash
+pip install -r requirements.txt
+uvicorn app:app --workers=8 --bind=0.0.0.0:8080 --pid=pid
+```
+
+Results:
+
+---
+
 ### Haskell Warp
 
 Language: Haskell
