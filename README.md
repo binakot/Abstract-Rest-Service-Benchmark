@@ -43,6 +43,8 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 
 ## Services
 
+![dotnet-core-logo](images/dotnet-core.png)
+
 ### .Net Core
 
 Language: C#
@@ -145,6 +147,8 @@ TBD
 
 ---
 
+![golang-logo](images/golang.png)
+
 ### Go Gorilla/Mux
 
 Language: Go
@@ -167,6 +171,8 @@ TBD
 ```
 
 ---
+
+![haskell-logo](images/haskell.png)
 
 ### Haskell Warp
 
@@ -196,6 +202,8 @@ TBD
 ```
 
 ---
+
+![java-logo](images/java.png)
 
 ### Java Light 4J
 
@@ -243,6 +251,8 @@ TBD
 
 ---
 
+![nodejs-logo](images/nodejs.png)
+
 ### NodeJS
 
 Language: JavaScript  
@@ -287,6 +297,8 @@ TBD
 ```
 
 ---
+
+![python-logo](images/python.png)
 
 ### Python Aiohttp
 
@@ -379,6 +391,8 @@ TBD
 ```
 
 ---
+
+![rust-logo](images/rust.png)
 
 ### Rust Iron
 
