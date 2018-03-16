@@ -45,7 +45,7 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 
 ![dotnet-core-logo](images/dotnet-core.png)
 
-### .Net Core
+### .Net Core by @vanbukin
 
 Language: C#
 
@@ -70,7 +70,7 @@ TBD
 
 ---
 
-### .Net Core ASP.NET MVC
+### .Net Core ASP.NET MVC by @binakot
 
 Language: C#
 
@@ -97,7 +97,7 @@ TBD
 
 ---
 
-### .Net Core Freya 
+### .Net Core Freya by @Szer
 
 Language: F#
 
@@ -122,7 +122,7 @@ TBD
 
 ---
 
-### .Net Core Giraffe 
+### .Net Core Giraffe by @Szer
 
 Language: F#
 
@@ -149,7 +149,7 @@ TBD
 
 ![golang-logo](images/golang.png)
 
-### Go Gorilla/Mux
+### Go Gorilla/Mux by @binakot
 
 Language: Go
 
@@ -174,7 +174,7 @@ TBD
 
 ![haskell-logo](images/haskell.png)
 
-### Haskell Warp
+### Haskell Warp by @kchugalinskiy
 
 Language: Haskell
 
@@ -205,7 +205,7 @@ TBD
 
 ![java-logo](images/java.png)
 
-### Java Light 4J
+### Java Light 4J by @0ffer
 
 Language: Java
 
@@ -228,7 +228,7 @@ TBD
 
 ---
 
-### Java Spring Boot
+### Java Spring Boot by @binakot
 
 Language: Java
 
@@ -253,7 +253,7 @@ TBD
 
 ![nodejs-logo](images/nodejs.png)
 
-### NodeJS
+### NodeJS by @WilixLead
 
 Language: JavaScript  
 
@@ -275,7 +275,7 @@ TBD
 
 ---
 
-### NodeJS Express
+### NodeJS Express by @WilixLead
 
 Language: JavaScript  
 
@@ -300,7 +300,7 @@ TBD
 
 ![python-logo](images/python.png)
 
-### Python Aiohttp
+### Python Aiohttp by @TyVik
 
 Language: Python
 
@@ -323,7 +323,7 @@ TBD
 
 ---
 
-### Python API Star
+### Python API Star by @sergeibershadsky
 
 Language: Python
 
@@ -346,7 +346,7 @@ TBD
 
 ---
 
-### Python Flask
+### Python Flask by @TyVik
 
 Language: Python
 
@@ -369,7 +369,7 @@ TBD
 
 ---
 
-### Python Sanic
+### Python Sanic by @TyVik
 
 Language: Python
 
@@ -394,7 +394,7 @@ TBD
 
 ![rust-logo](images/rust.png)
 
-### Rust Iron
+### Rust Iron by @kchugalinskiy
 
 Language: Rust
 
@@ -416,7 +416,7 @@ TBD
 
 ---
 
-### Rust Rocket
+### Rust Rocket by @qezz
 
 Language: Rust
 
