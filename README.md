@@ -45,7 +45,7 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 
 ![dotnet-core-logo](images/dotnet-core.png)
 
-### .Net Core by @vanbukin
+### .Net Core by [@vanbukin](https://github.com/vanbukin)
 
 Language: C#
 
@@ -70,7 +70,7 @@ TBD
 
 ---
 
-### .Net Core ASP.NET MVC by @binakot
+### .Net Core ASP.NET MVC by [@binakot](https://github.com/binakot)
 
 Language: C#
 
@@ -97,7 +97,7 @@ TBD
 
 ---
 
-### .Net Core Freya by @Szer
+### .Net Core Freya by [@Szer](https://github.com/Szer)
 
 Language: F#
 
@@ -122,7 +122,7 @@ TBD
 
 ---
 
-### .Net Core Giraffe by @Szer
+### .Net Core Giraffe by [@Szer](https://github.com/Szer)
 
 Language: F#
 
@@ -149,7 +149,7 @@ TBD
 
 ![golang-logo](images/golang.png)
 
-### Go Gorilla/Mux by @binakot
+### Go Gorilla/Mux by [@binakot](https://github.com/binakot)
 
 Language: Go
 
@@ -174,7 +174,7 @@ TBD
 
 ![haskell-logo](images/haskell.png)
 
-### Haskell Warp by @kchugalinskiy
+### Haskell Warp by [@kchugalinskiy](https://github.com/kchugalinskiy)
 
 Language: Haskell
 
@@ -205,7 +205,7 @@ TBD
 
 ![java-logo](images/java.png)
 
-### Java Light 4J by @0ffer
+### Java Light 4J by [@0ffer](https://github.com/0ffer)
 
 Language: Java
 
@@ -228,7 +228,7 @@ TBD
 
 ---
 
-### Java Spring Boot by @binakot
+### Java Spring Boot by [@binakot](https://github.com/binakot)
 
 Language: Java
 
@@ -253,7 +253,7 @@ TBD
 
 ![nodejs-logo](images/nodejs.png)
 
-### NodeJS by @WilixLead
+### NodeJS by [@WilixLead](https://github.com/WilixLead)
 
 Language: JavaScript  
 
@@ -275,7 +275,7 @@ TBD
 
 ---
 
-### NodeJS Express by @WilixLead
+### NodeJS Express by [@WilixLead](https://github.com/WilixLead)
 
 Language: JavaScript  
 
@@ -300,7 +300,7 @@ TBD
 
 ![python-logo](images/python.png)
 
-### Python Aiohttp by @TyVik
+### Python Aiohttp by [@TyVik](https://github.com/TyVik)
 
 Language: Python
 
@@ -323,7 +323,7 @@ TBD
 
 ---
 
-### Python API Star by @sergeibershadsky
+### Python API Star by [@sergeibershadsky](https://github.com/sergeibershadsky)
 
 Language: Python
 
@@ -346,7 +346,7 @@ TBD
 
 ---
 
-### Python Flask by @TyVik
+### Python Flask by [@TyVik](https://github.com/TyVik)
 
 Language: Python
 
@@ -369,7 +369,7 @@ TBD
 
 ---
 
-### Python Sanic by @TyVik
+### Python Sanic by [@TyVik](https://github.com/TyVik)
 
 Language: Python
 
@@ -394,7 +394,7 @@ TBD
 
 ![rust-logo](images/rust.png)
 
-### Rust Iron by @kchugalinskiy
+### Rust Iron by [@kchugalinskiy](https://github.com/kchugalinskiy)
 
 Language: Rust
 
@@ -416,7 +416,7 @@ TBD
 
 ---
 
-### Rust Rocket by @qezz
+### Rust Rocket by [@qezz](https://github.com/qezz)
 
 Language: Rust
 
