@@ -510,6 +510,28 @@ Transfer/sec:     20.48MB
 
 ---
 
+### Rust Rocket
+
+Language: Rust
+
+Framework: Rust Rocket
+
+Main tutorial: https://rocket.rs/guide/getting-started/#hello-world
+
+Run:
+
+```bash
+$ ROCKET_ENV=prod cargo run --release
+```
+
+Result:
+
+```text
+tbd
+```
+
+---
+
 ## Hardware
 
 ```text
