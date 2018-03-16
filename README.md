@@ -485,7 +485,6 @@ Main tutorial: https://github.com/iron/router/blob/master/examples/simple.rs
 Run:  
 
 ```bash
-$ cargo build
 $ cargo run --release
 ``` 
 
