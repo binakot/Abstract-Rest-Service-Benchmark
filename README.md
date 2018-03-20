@@ -24,6 +24,7 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 | - | ------- | -------- | --------- | --- |
 |  | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | TBD |
 |  | [.Net Core ASP.NET MVC](/dot-net-core-asp-net/) | C# | dotnet 2.1.4 | TBD |
+|  | [.Net Core Websocket](/dot-net-core-websocket/) | C# | dotnet 2.1.4 + websocket | TBD |
 |  | [.Net Core Freya](/dot-net-core-freya/) | F# | dotnet 2.1.4 + freya-hopac | TBD |
 |  | [.Net Core Giraffe](/dot-net-core-giraffe/) | F# | dotnet 2.1.4 + giraffe | TBD |
 |  | [Go Gorilla/Mux](/go-gorilla-mux/) | Golang | go sdk 1.9.4 + gorilla/mux | TBD |
@@ -87,6 +88,31 @@ $ export ASPNETCORE_ENVIRONMENT=Production
 $ export ASPNETCORE_URLS=http://0.0.0.0:8080
 $ cd ./dotNetCoreRestService/bin/Release/netcoreapp2.0/publish
 $ dotnet dotNetCoreRestService.dll
+```
+
+Result:
+
+```text
+TBD
+```
+
+---
+
+### .Net Core Websocket by [@petriashev](https://github.com/petriashev)
+
+Language: C#
+
+Framework: .Net Core 2, Websocket
+
+Run:
+
+```bash
+$ dotnet restore
+$ dotnet publish -c Release
+$ export ASPNETCORE_ENVIRONMENT=Production
+$ export ASPNETCORE_URLS=http://0.0.0.0:8080
+$ cd ./bin/Release/netcoreapp2.0/publish
+$ dotnet dot-net-core-websocket.dll
 ```
 
 Result:
