@@ -22,22 +22,22 @@ $ wrk -t8 -c512 -d2m --timeout 10s --latency http://localhost:8080/api/test
 
 | # | Service | Language | Framework | RPS |
 | - | ------- | -------- | --------- | --- |
-|  | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | TBD |
-|  | [.Net Core ASP.NET MVC](/dot-net-core-asp-net/) | C# | dotnet 2.1.4 | TBD |
+|  | [.Net Core](/dot-net-core/) | C# | dotnet 2.1.4 | 249758.46 |
+|  | [.Net Core ASP.NET MVC](/dot-net-core-asp-net/) | C# | dotnet 2.1.4 | 99091.85 |
 |  | [.Net Core Websocket](/dot-net-core-websocket/) | C# | dotnet 2.1.4 + websocket | TBD |
-|  | [.Net Core Freya](/dot-net-core-freya/) | F# | dotnet 2.1.4 + freya-hopac | TBD |
+|  | [.Net Core Freya](/dot-net-core-freya/) | F# | dotnet 2.1.4 + freya-hopac | 49736.08 |
 |  | [.Net Core Giraffe](/dot-net-core-giraffe/) | F# | dotnet 2.1.4 + giraffe | TBD |
-|  | [Go Gorilla/Mux](/go-gorilla-mux/) | Golang | go sdk 1.9.4 + gorilla/mux | TBD |
-|  | [Haskell Warp](/haskell-warp/) | Haskell | ghc 7.10.3 + warp | TBD |
-|  | [Java Light 4J](/java-light-4j/) | Java | oracle jdk 9.0.4 + ligth4j | TBD |
-|  | [Java Spring Boot](/java-spring-boot/) | Java | oracle jdk 9.0.4 + spring boot | TBD |
-|  | [NodeJS](/nodejs/) | JavaScript | nodejs 8.9.4 | TBD |
-|  | [NodeJS Express](/nodejs-express/) | JavaScript | nodejs 8.9.4 + express | TBD |
-|  | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp | TBD |
+|  | [Go Gorilla/Mux](/go-gorilla-mux/) | Golang | go sdk 1.9.4 + gorilla/mux | 131499.79 |
+|  | [Haskell Warp](/haskell-warp/) | Haskell | ghc 7.10.3 + warp | 191020.62 |
+|  | [Java Light 4J](/java-light-4j/) | Java | oracle jdk 9.0.4 + ligth4j | 401511.94 |
+|  | [Java Spring Boot](/java-spring-boot/) | Java | oracle jdk 9.0.4 + spring boot | 56253.12 |
+|  | [NodeJS](/nodejs/) | JavaScript | nodejs 8.9.4 | 94132.92 |
+|  | [NodeJS Express](/nodejs-express/) | JavaScript | nodejs 8.9.4 + express | 58769.29 |
+|  | [Python Aiohttp](/python-aiohttp/) | Python | python 3.5.2 + aiohttp | 4603.01 |
 |  | [Python API Star](/python-apistar/) | Python | python 3.5.2 + apistar | TBD |
-|  | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask | TBD |
-|  | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic| TBD |
-|  | [Rust Iron](/rust-iron/) | Rust | rust 1.24.1 + iron | TBD |
+|  | [Python Flask](/python-flask/) | Python | python 3.5.2 + flask | 200.44 |
+|  | [Python Sanic](/python-sanic/) | Python | python 3.5.2 + sanic| 74854.41 |
+|  | [Rust Iron](/rust-iron/) | Rust | rust 1.24.1 + iron | 186726.17 |
 |  | [Rust Rocket](/rust-rocket/) | Rust | rust 1.24.1 + rocket | TBD |
 
 ---
