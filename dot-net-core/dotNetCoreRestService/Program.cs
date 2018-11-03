@@ -26,13 +26,11 @@ namespace dotNetCoreRestService
                     options.AllowSynchronousIO = false;
                     options.AddServerHeader = false;
                 })
-                .UseLibuv(options => { options.ThreadCount = Environment.ProcessorCount; })
+                .UseSockets(options => options.IOQueueCount = Environment.ProcessorCount)
                 .Configure(app => app.Run(httpContext =>
                 {
                     if (httpContext.Request.Path == apiPath)
-                    {
                         return httpContext.Response.Body.WriteAsync(message, 0, messageSize);
-                    }
 
                     httpContext.Response.StatusCode = 404;
                     return httpContext.Response.Body.WriteAsync(notFoundMessage, 0, notFoundMessageSize);
