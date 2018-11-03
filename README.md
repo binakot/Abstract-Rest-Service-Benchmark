@@ -59,7 +59,7 @@ $ dotnet restore
 $ dotnet publish -c Release
 $ export ASPNETCORE_ENVIRONMENT=Production
 $ export ASPNETCORE_URLS=http://0.0.0.0:8080
-$ cd ./dotNetCoreRestService/bin/Release/netcoreapp2.0/publish
+$ cd ./dotNetCoreRestService/bin/Release/netcoreapp2.1/publish
 $ dotnet dotNetCoreRestService.dll
 ```
 
