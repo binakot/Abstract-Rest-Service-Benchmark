@@ -233,6 +233,26 @@ TBD
 
 ![java-logo](images/java.png)
 
+### Java
+
+Language: Java
+
+Framework: Oracle JDK 8 or above
+
+Run:
+
+```bash
+$ gradle clean run
+```
+
+Result:
+
+```text
+TBD
+```
+
+---
+
 ### Java Light 4J by [@0ffer](https://github.com/0ffer)
 
 Language: Java
